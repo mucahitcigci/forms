@@ -1,0 +1,188 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+
+}
+body{
+    background-color: rgba(221, 102, 23, 0.199);
+}
+#wrapper{
+    width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Toggle Button özellikler  */
+.button-box{
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #ff7300;
+    border-radius: 30px;
+}
+.toggle-btn{
+    padding: 10px 30px;
+    cursor: pointer;
+    background:transparent;
+    border: 0;
+    outline: none;
+    position: relative; 
+}
+
+#btn{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    border-radius: 30px;
+    transition: .5s;
+    
+}
+
+
+
+/* Form CSS özellikleri */
+.form-container{
+width: 100%;
+max-width: 40rem;
+background-color:  #fff;
+position: relative;
+padding: 10rem 0;
+box-shadow: 0 1px 1.5rem rgba(0, 0, 0, 0.1);
+border-radius: 1rem;
+z-index: 1;
+}
+.form-container::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30rem;
+    background: linear-gradient(to left,#ff6004d5,#ffaa0db9);
+    border-bottom-right-radius: 100%;
+    border-bottom-left-radius: 100%;
+}
+.form-heading{
+    color:#fff;
+    font-size: 2.5rem;
+    position: absolute;
+    top: 3.5rem;
+    left: 10rem;
+
+}
+form{
+    transform: translateX(10rem);
+    padding: 2rem 0;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 1px 1.5rem rgba(0, 0, 0 , .1);
+}
+/* İnput ve metin  CSS özellikleri */
+.input-group{
+    width: 90%;
+    margin: 0 auto;
+    position:relative;
+    display: flex;
+    align-items: baseline;
+}
+
+.input-group input{
+    position: relative;
+    width: 100%;
+    padding: 1rem 0 ;
+    margin-top: .5rem;
+    border: none;
+    outline: none;
+    font-size: 1.8rem;
+    color: #ff7300;
+}
+  /* Form input ikonları CSS özellikleri */
+.input-group > i{
+    font-size: 2rem;
+    margin-right: 1rem;
+    color: #ff9100;
+
+}
+/*input öğeleri animasyonlu bar satır barı CSS özellikleri */
+.input-group .bar{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0 , .1);
+    width: 100%;
+    height: 1px;
+
+}
+.input-group .bar::before{
+    content: '';
+    position: absolute;
+    background-color: #ff9100;
+    width: 0%;
+    height: 2px;
+    transition: width 650ms;
+}
+.input-group input:focus+.bar::before{
+    width: 100%;
+
+}
+/* Kaydı tamamla düğmesi CSS özellikleri */
+.input-group button{
+    margin: 3rem auto;
+    padding: 1rem 5rem;
+    background: linear-gradient(to left,#ff6004d5,#ffaa0d88);
+    border: none;
+    color: rgba(255, 255, 255, 0.884);
+    font-size: 2.5rem;
+    cursor: pointer;
+    border-radius: 3rem;
+
+}/* Kaydı tamamla düğmesi üzerindeyken CSS özellikleri */
+.input-group button:focus,
+.input-group button:hover{
+    background: linear-gradient(to right,#ff6004d5,#ffaa0d88);
+}
+/* Giriş Yap yazısı CSS özellikleri */
+.switch-login{
+    text-align: center;
+
+}
+.switch-login a{
+    text-decoration: none;
+    color: #a1a1a1;
+    font-size: 1.5rem;
+
+}
+.switch-login a span{
+    color: #ffaa0d;
+}
+
+.switch-login a span:hover{
+    padding-bottom: 2px;
+    border-bottom: 2px solid #ff820d;
+}
+/*Mobil uyumlu hale getiriyoruz*/
+@media screen and (max-width:700px) {
+    .form-container::before{
+        height: 10rem;
+    }
+    .form-heading{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    form{
+        border-radius: initial;
+        transform: initial;
+        box-shadow: none;
+        
+    }
+}
