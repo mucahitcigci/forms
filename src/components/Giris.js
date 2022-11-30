@@ -6,17 +6,17 @@ export default function Giris() {
       <div id="wrapper">
         <div className="form-container">
           <span className="form-heading">
-            <i className="bi-signpost-split"></i> Giriş Yap{" "}
+            <i className="bi-signpost-split"></i> Login{" "}
           </span>
           <form action="">
             <div className="input-group">
               <i className="bi-person-fill"></i>
-              <input type="text" placeholder="Kullanıcı Adı..." required />
+              <input type="text" placeholder="Username..." required />
               <span className="bar"></span>
             </div>
             <div className="input-group">
               <i className="bi-file-lock2-fill"></i>
-              <input type="password" placeholder="Şifre..." required />
+              <input type="password" placeholder="Password..." required />
               <span className="bar"></span>
             </div>
 
@@ -27,7 +27,7 @@ export default function Giris() {
             </div>
             <div className="switch-login">
               <a href={"/kayit"}>
-                Bir hesaba sahip değil misiniz? <span>Kayıt ol</span>
+                Don't have an account? <span>Sign </span>
               </a>
             </div>
           </form>
