@@ -10,7 +10,7 @@ function App() {
           <Route path="/" element={<Giris />} />
           <Route path="/kayit" element={<Kayit />} />
         </Routes>
-        <div>test</div>
+        
       </BrowserRouter>
     </div>
   );
