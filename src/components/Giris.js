@@ -7,14 +7,13 @@ export default function Giris(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(name + " " + pass);
-    console.log("ww");
   };
   return (
     <div>
       <div id="wrapper">
         <div className="form-container">
           <span className="form-heading">
-            <i className="bi-signpost-split"></i> Login{" "}
+            <i className="bi-signpost-split"></i> Giriş Yap{" "}
           </span>
           <form onSubmit={handleSubmit} action="">
             <div className="input-group">

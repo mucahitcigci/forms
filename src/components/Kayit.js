@@ -7,7 +7,7 @@ export default function Kayit(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(name + "" + pass + "" + mail);
+    console.log(name + " " + pass + " " + mail);
   };
   return (
     <div id="wrapper">

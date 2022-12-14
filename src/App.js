@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import "./App.css";
 
 import Giris from "./components/Giris";
 import Kayit from "./components/Kayit";
 function App() {
-  const [currentForm, setCurrentForm] = useState("login");
+  const [currentForm, setCurrentForm] = useState("giris");
 
   const toggleForm = (formName) => {
     setCurrentForm(formName);
