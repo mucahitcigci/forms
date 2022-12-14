@@ -14,7 +14,7 @@ export default function Giris(props) {
       <div id="wrapper">
         <div className="form-container">
           <span className="form-heading">
-            <i className="bi-signpost-split"></i> Giriş Yap{" "}
+            <i className="bi-signpost-split"></i> Login{" "}
           </span>
           <form onSubmit={handleSubmit} action="">
             <div className="input-group">
