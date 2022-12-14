@@ -7,6 +7,7 @@ export default function Giris(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(name + " " + pass);
+    console.log("ww");
   };
   return (
     <div>
