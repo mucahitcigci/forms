@@ -1,17 +1,28 @@
+import React, { useState } from "react";
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import Giris from "./components/Giris";
 import Kayit from "./components/Kayit";
 function App() {
+  const [currentForm, setCurrentForm] = useState("login");
+
+  const toggleForm = (formName) => {
+    setCurrentForm(formName);
+  };
   return (
     <div>
-      <BrowserRouter>
+      {currentForm === "giris" ? (
+        <Giris onFormSwitch={toggleForm} />
+      ) : (
+        <Kayit onFormSwitch={toggleForm} />
+      )}
+      {/* <BrowserRouter>
         <Routes>
           <Route path="/" element={<Giris />} />
           <Route path="/kayit" element={<Kayit />} />
         </Routes>
         <div>test</div>
-      </BrowserRouter>
+      </BrowserRouter> */}
     </div>
   );
 }

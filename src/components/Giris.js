@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
-export default function Giris() {
+export default function Giris(props) {
+  const [name, setName] = useState("");
+  const [pass, setPass] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(name + " " + pass);
+  };
   return (
     <div>
       <div id="wrapper">
@@ -8,25 +15,37 @@ export default function Giris() {
           <span className="form-heading">
             <i className="bi-signpost-split"></i> Giriş Yap{" "}
           </span>
-          <form action="">
+          <form onSubmit={handleSubmit} action="">
             <div className="input-group">
               <i className="bi-person-fill"></i>
-              <input type="text" placeholder="Kullanıcı Adı..." required />
+              <input
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                type="text"
+                placeholder="Kullanıcı Adı..."
+                required
+              />
               <span className="bar"></span>
             </div>
             <div className="input-group">
               <i className="bi-file-lock2-fill"></i>
-              <input type="password" placeholder="Şifre..." required />
+              <input
+                value={pass}
+                onChange={(e) => setPass(e.target.value)}
+                type="password"
+                placeholder="Şifre..."
+                required
+              />
               <span className="bar"></span>
             </div>
 
             <div className="input-group">
-              <button>
+              <button type="submit">
                 <i className="bi-send-plus-fill"></i>
               </button>
             </div>
             <div className="switch-login">
-              <a href={"/kayit"}>
+              <a onClick={() => props.onFormSwitch("kayit")}>
                 Bir hesaba sahip değil misiniz? <span>Kayıt ol</span>
               </a>
             </div>

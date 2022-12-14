@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
-export default function Kayit() {
+export default function Kayit(props) {
+  const [name, setName] = useState("");
+  const [pass, setPass] = useState("");
+  const [mail, setMail] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(name + "" + pass + "" + mail);
+  };
   return (
     <div id="wrapper">
       <div className="form-container">
@@ -8,34 +16,48 @@ export default function Kayit() {
           <i className="bi-signpost-split"></i> Kayıt Ol
         </span>
 
-        <form action="">
+        <form onSubmit={handleSubmit} action="">
           <div className="input-group">
             <i className="bi-person-fill"></i>
-            <input type="text" placeholder="Kullanıcı Adı..." required />
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              type="text"
+              placeholder="Kullanıcı Adı..."
+              required
+            />
             <span className="bar"></span>
           </div>
           <div className="input-group">
             <i className="bi-envelope-fill"></i>
-            <input type="email" placeholder="E-posta.." required />
+            <input
+              value={mail}
+              onChange={(e) => setMail(e.target.value)}
+              type="email"
+              placeholder="E-posta.."
+              required
+            />
             <span className="bar"></span>
           </div>
           <div className="input-group">
             <i className="bi-file-lock2-fill"></i>
-            <input type="password" placeholder="Şifre..." required />
+            <input
+              value={pass}
+              onChange={(e) => setPass(e.target.value)}
+              type="password"
+              placeholder="Şifre..."
+              required
+            />
             <span className="bar"></span>
           </div>
-          <div className="input-group">
-            <i className="bi-file-lock2-fill"></i>
-            <input type="password" placeholder="Şifre Tekrar..." required />
-            <span className="bar"></span>
-          </div>
+
           <div className="input-group">
             <button>
               <i className="bi-send-plus-fill"></i>
             </button>
           </div>
           <div className="switch-login">
-            <a href={"/"}>
+            <a onClick={() => props.onFormSwitch("giris")}>
               Zaten bir hesaba sahip misiniz? <span>Giriş Yap</span>
             </a>
           </div>
